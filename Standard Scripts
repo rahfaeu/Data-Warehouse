@@ -1,0 +1,18 @@
+# Tabelas no Banco DW
+
+CREATE TABLE [dbo].[DimAuditoria](
+	[skAuditoria] [int] IDENTITY(1,1) NOT NULL,
+	[idMapa] [int] NULL,
+	[qtRegistrosOrigem] [int] NULL,
+	[qtRegistrosDestino] [int] NULL,
+	[qtRegistrosErros] [int] NULL,
+	[dthrInicioCarga] [datetime] NULL,
+	[dthrFinalCarga] [datetime] NULL,
+	[dsErro] [varchar](600) NULL,
+	[idRegistroOrigemErro] [varchar](600) NULL,
+	[stGeralCarga] [char](1) NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[DimAuditoria] ADD  DEFAULT ('N') FOR [stGeralCarga]
+GO
